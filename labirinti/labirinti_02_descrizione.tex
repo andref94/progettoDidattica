@@ -1,0 +1,509 @@
+% NB: si suggerisce di abilitare la modalità "a capo automatico" nell'editor utilizzato
+\documentclass{article}
+\usepackage[a4paper,margin=1in]{geometry}
+\usepackage{kantlipsum}
+%\usepackage{lscape}
+\usepackage{pdflscape} %uncomment this  and comment above line to see the difference
+	
+	
+
+
+\usepackage[latin1]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[italian]{babel}
+
+\usepackage{longtable}
+\usepackage{paralist}
+
+\title{Laboratorio Labirinti}
+\date{}
+\begin{document}
+
+\maketitle
+
+% mancano i riferimenti al tempo
+
+\section{Obiettivi formativi del laboratorio}
+
+
+% 
+% Le \textbf{conoscenze} che il percorso punta a far acquisire sono:
+% \begin{compactitem}
+% 	\item sapere che, per visualizzare/elaborare un testo formattato al computer, è necessario rappresentare oltre al testo le informazioni relative alla formattazione;
+% 	\item conoscere il paradigma dei linguaggi di marcatura;
+% 	\item conoscere le regole di sintassi del sistema di scrittura tipo wiki proposto in classe.\\
+% \end{compactitem}
+% 
+% Le \textbf{abilità} che il percorso punta a far acquisire sono:
+% \begin{compactitem}
+% 	\item saper rappresentare in modo non ambiguo tramite oggetti/simboli le informazioni relative alla formattazione di un testo;
+% 	\item dato un insieme di regole (legenda) saper interpretare/rappresentare le informazioni relative alla formattazione di un testo;
+% 	\item saper confrontare diversi usi dei marcatori;
+% 	\item saper stabilire se due rappresentazioni sono equivalenti;
+% 	\item saper stabilire se una rappresentazione è ambigua oppure no.\\
+% \end{compactitem}
+% 
+% Le \textbf{competenze} che il percorso punta a far acquisire sono:
+% \begin{compactitem}
+% 	\item rendersi conto che la stessa informazione relativa alla formattazione di un testo si può rappresentare in modi equivalenti (regole/convenzioni);
+% 	\item saper interpretare e usare le regole sintattiche di un qualunque sistema di scrittura tipo wiki (non noto in precedenza).
+% \end{compactitem}
+
+%\newgeometry{top=1cm,bottom=0.1cm,right=-1cm,textwidth=20cm}
+
+
+\section{Note generali}
+
+Non è detto che il laboratorio debba essere condotto interamente da una stessa persona; ci si può suddividere le parti o alternare, purché ci si sia accordati per tempo su chi fa cosa.
+
+
+Però è bene che ciascun momento di passaggio (presentazione delle attività, spiegazione delle consegne, discussioni, ecc), sia condotto da una sola persona alla volta, soprattutto se queste fasi sono condotte in maniera interlocutoria e non tradizionalmente frontale: il rischio infatti è che questi momenti risultino dispersivi, mentre dovrebbero essere dei momenti chiave che guidano l'attività e fanno emergere il senso complessivo del percorso. Il conduttore di questi momenti di passaggio deve avere molto chiaro in testa qual è il filo del ragionamento complessivo e aiutare la classe a percepirlo, esplicitando i collegamenti tra le varie attività. In questi momenti di passaggio è meglio quindi che i tutor che non stanno conducendo non intervengano rivolgendosi direttamente alla classe; se notano qualcosa di critico, ad esempio si accorgono che è stato dimenticato qualcosa di importante, è preferibile che segnalino la cosa al conduttore che poi eventualmente aggiungerà/preciserà la cosa alla classe.
+
+\bigskip
+
+
+
+Al termine del laboratorio si congedano gli studenti e il docente, e si sistema il materiale in modo che possa essere utilizzato nei laboratori successivi. Si prende nota di eventuale necessità di portare altro materiale di consumo (fogli, pennarelli, post-it, ecc.). Nella busta si inserisce il foglio con la clusterizzazione iniziale dei post-it. Si chiude la busta e la si ripone in un posto sicuro.
+
+
+
+\begin{landscape}
+
+	
+\section{Descrizione delle attività --- guida a conduttori e tutor}
+
+\subsection{Presentazione del conduttore, del tutor, e del laboratorio}
+
+
+
+\begin{longtable}{|p{7cm}|p{10cm}|p{8cm}|}
+
+\hline
+\textbf{Descrizione dell'attività} 
+& \textbf{Cosa dire} 
+& \textbf{A cosa prestare attenzione} 
+\\
+\hline
+
+
+Presentazione del conduttore, del tutor, e del laboratorio
+
+\medskip
+[\emph{Nel frattempo sul diario un tutor scrive la data, la scuola, la classe, il numero di partecipanti e il nome del laboratorio.}]
+&
+\begin{compactitem}
+\item Presentazione dei conduttori e del tutor (studenti universitari, dipartimento di informatica)
+\item Vi proponiamo oggi un laboratorio di informatica chiamato ``labirinti''
+\item Il laboratorio dura due ore di lezione
+\item La prima parte del laboratorio si svolge in un'aula (ma ci sposteremo da qui per essere più comodi), la seconda parte si svolgerà in aula computer.
+\item Lavoreremo in gruppo, proponendovi dei giochi. Avrete quindi l'occasione di discutere e confrontarvi con i vostri compagni di gruppo. 
+\item Vi faremo spesso delle domande: non ci sono risposte giuste o sbagliate; ogni vostra idea/proposta è benvenuta, purché siate disponibili a metterla in discussione e ragionarci sopra.
+\end{compactitem}
+&
+Rivolgetevi alla classe, muovete lo sguardo, cercate di mostrarvi tranquilli e aperti, per metterli a loro agio. 
+\\
+\hline
+
+Definizione di informatica come ``elaborazione automatica dell'informazione''. Breve spiegazione delle due parole che non riguardano l'attività specifica del laboratorio, in questo caso ``elaborazione'' e ``informazione''
+&
+\emph{Elaborazione:} un'informazione pu\`o essere usata per ottenerne
+  un'altra: p.es. l'informazione che Ada va a scuola, pu\`o essere
+  trasformata in Ada è una studentessa, esistono studenti che portano
+  il nome di Ada, ecc.
+
+\emph{Informazione:} ci\`o che sappiamo o che osserviamo pu\`o essere
+\emph{rappresentato}, cio\`e distinto in modo preciso dal resto
+dell'universo. Risultano particolarmente interessanti le
+rappresentazioni simboliche (digitali/alfabetiche), che con un
+ristretto numero di simboli (alfabeto) rappresentano
+oggetti/concetti. Il linguaggio con una ventina di simboli rappresenta
+centinaia di migliaia di parole, le quali possono essere composte per rappresentare
+concetti concreti e astratti.
+
+&
+\\
+\hline
+
+\end{longtable}
+
+
+\newpage
+\subsection{Definizione di ``automatico''}
+
+Questa parte si può interamente sostituire con una spiegazione
+tradizionale-frontale del concetto di automatico.
+
+  \emph{Automazione:} l'elaborazione pu\`o avvenire usando macchine,
+  tutto sommato piuttosto semplici, senza la necessit\`a di intervento
+  umano dopo la progettazione o configurazione iniziale.
+
+Se si decide di farla, è importante però fare entrambe le attività (scrittura post-it e lettura/\emph{clusterizzazione}), 
+prima di proseguire con il laboratorio vero e proprio.
+
+
+\begin{longtable}{|p{3cm}|p{11cm}|p{11cm}|}
+\hline
+\textbf{Descrizione dell'attività} 
+& \textbf{Cosa dire} 
+& \textbf{A cosa prestare attenzione} 
+\\
+\hline
+
+
+Definizione di ``informazione'' sui post-it
+
+\medskip
+[\emph{Nel frattempo sul cartellone vengono scritte la data, la scuola, la classe e il nome del laboratorio.}]
+&
+\begin{compactitem}
+	\item \textbf{Cominciamo con una piccola attività che serve per iniziare a ragionare sul concetto di ``automatico'', tema del laboratorio di oggi.}
+	\item partiamo da quello che voi avete già in mente o associate alla parola ``automatico'', sicuramente è una parola che avete già sentito. 
+	\item vi stiamo consegnando dei post-it: chiediamo a ciascuno di voi di scrivere sul suo post-it una frase (10 parole) che definisca cosa vuol dire ``automatico''. 
+	\item poi raccoglieremo tutti i post-it e li leggeremo ad alta voce, ma state tranquilli: sono anonimi!
+\end{compactitem}
+&
+\`E probabile che qualcuno sia in difficoltà, bisogna cercare di rassicurarli ricordando che non ci sono risposte giuste o sbagliate, ma che servono solo a capire che cosa loro hanno in mente quando si parla di ``automatico'', e che i post-it sono anonimi.
+
+Se qualcuno è in crisi e non sa proprio cosa scrivere, provate a dirgli di pensare a delle frasi in cui userebbe la parola ``automatico'' o ``automaticamente'' (es: ``funziona automaticamente'', ma cercate di non suggerirla voi!) e a dare una definizione di quel significato.
+\\
+\hline
+
+
+Lettura e \emph{clusterizzazione} dei post-it
+&
+Si leggono a voce alta i post-it, cercando di rivolgersi alla classe, e man mano si raccolgono e si clusterizzano sul cartellone in base ai concetti chiave che emergono dalle definizioni che hanno dato gli studenti.
+
+Alla fine si provano a riepilogare questi concetti chiave, e \textbf{si sottolinea come dai diversi contributi emerga una definizione varia e ricca della parola ``automatico''}.
+&
+Il senso di questa attività è costruire una definizione collettiva di cui la classe è autrice; è importante che ciascuno riconosca e senta valorizzato il suo contributo, quindi bisogna fare attenzione a:
+\begin{compactitem}
+	\item leggere le frasi con calma, dando il tempo a tutti di capire il contributo dei compagni
+	\item durante la lettura dei post-it, se qualcuno si fa riconoscere come autore, darne un riscontro sorridendo o con una conferma verbale
+	\item usare come parole chiave i termini o le espressioni usate davvero nei post-it e non ad esempio dei sinonimi (es: ``autonomo'' e ``da solo'' non sono la stessa espressione!)
+	\item non forzare le associazioni/raggruppamenti di post-it
+	\item non interpretare i post-it ed evitare di commentarli, ma limitarsi a leggerli
+	\item incentivare osservazioni o domande relative alla clusterizzazione
+\end{compactitem}
+
+\\
+\hline
+
+
+\end{longtable}
+
+\newpage
+\subsection{Robot umani}
+
+
+
+\begin{longtable}{|p{5cm}|p{8.5cm}|p{10cm}|}
+	\hline
+	\textbf{Descrizione dell'attività} 
+	& \textbf{Cosa dire} 
+	& \textbf{A cosa prestare attenzione} 
+	\\
+	\hline
+
+Presentazione dell'attività.
+
+\smallskip
+\emph{[Preparare un percorso a L per ragazzini di 8-13 anni, un percorso a S per ragazzi più grandi. 
+	In entrambi i casi lungo il percorso si deve posizionare un oggetto che deve essere raccolto dal robot.]}
+
+\emph{[Dopo la spiegazione della consegna, si dividono gli studenti in 3/4 gruppi (a seconda dello spazio disponibile) 
+	e si consegna a ciascun gruppo una benda.]}
+
+
+&
+\begin{compactitem}
+	\item \textbf{Entriamo nel vivo del laboratorio che ha per argomento il concetto di ``automatico'', e iniziamo con un gioco}
+	\item Abbiamo predisposto nell'aula dei percorsi/labirinti; vi divideremo in gruppi e ciascun gruppo lavorerà su un labirinto; 
+	l'obiettivo del gruppo è condurre un robot umano (un compagno bendato) affinché attraversi tutto il percorso.
+	\item Spiegazione dei ruoli:
+
+\begin{itemize}
+\item Robot (bendato, deve essere acritico)
+\item Badante (evita che il robot si faccia male)
+\item Portavoce (dando le spalle al robot, dovrà leggere ad alta volce le azioni che il robot dovrà compiere)
+\end{itemize}
+
+\item Presentazione del percorso.
+
+\item \textbf{Cominciate a prendere confidenza col percorso e a fare delle prove.}
+
+\end{compactitem}
+
+&
+\begin{compactitem}
+\item Assicurarsi che la consegna sia chiara, chiedere se ci sono domande e eventualmente chiarire i dubbi.
+
+\item Piuttosto che
+\emph{istruzioni}, probabilmente \`e meglio usare il termine \emph{azioni}.
+
+\item Questa fase deve durare solo cinque minuti, l'obiettivo è far esplorare e
+sperimentare il percorso (senza troppi vincoli o regole). 
+
+\item In questa fase non ha senso aspettarsi che gli studenti inizino già a cogliere le criticità.
+\end{compactitem}
+
+\\
+\hline
+
+Introduzione dei vincoli sull'uso dei post-it.
+
+\medskip
+\textbf{NB: questa fase e la successiva possono essere riunificate per ridurre i tempi.}
+
+\medskip
+\emph{
+[Alla fine della spiegazione, distribuire ad ogni gruppo un foglio di protocollo, post-it di 4 colori diversi, matite.]}
+&
+\begin{compactitem}
+\item \textbf{Ora che avete preso confidenza col percorso, complichiamo un po' le cose!}
+
+\item Dovrete scrivere le indicazioni per il vostro robot su un foglio di carta usando dei post-it colorati. Su ciascun post-it dovrete scrivere un'azione da compiere, in modo sintetico, con 5 parole al massimo. Se usate un colore per scrivere un'azione, i post-it di quel colore potranno essere usati solo per quell'azione. 
+
+
+\item Mostrare come i post-it possono essere posizionati sul foglio in sequenza.
+
+\end{compactitem}
+
+&
+\begin{compactitem}
+\item Monitorare tutti i gruppi e sostenere in particolare quelli in difficoltà;  
+quando la maggior parte dei gruppi ha individuato le 4 azioni da scrivere sui post-it, si può passare alla fase successiva.
+
+\item La discussione in gruppo dovrebbe favorire la formulazione di idee/domande/critiche: si ha la necessità di spiegare al compagno le proprie idee e perché queste funzionano
+
+\item In questa fase gli studenti effettueranno una vera e propria sperimentazione: se si accorgono che le azioni scelte, o l'ordine con cui sono stati posizionati sul foglio, non consentono al robot di percorrere correttamente il labirinto, inizieranno a domandarsi il perché, e a fare ipotesi su come possono migliorare la loro soluzione.
+
+\item Non è necessario introdurre in questa fase il termine ``programma'', lo si può fare nella fase al computer.
+%come per rivelare che l'attività precedente ha molti punti in comune con quella al computer.
+
+\item Gli studenti stanno collaborando nella scelta delle azioni e della disposizione dei post-it? Evitare che le decisioni vengano prese da 1-2 persone soltanto. 
+Incentivare la cooperazione, così che tutti siano più partecipi e aumenti il confronto di idee diverse. Se qualcuno non collabora perché non ha capito qualcosa, spronarlo a fare domande.
+
+\item Può essere necessario chiarire bene che la stessa azione può essere usata più volte, e in punti diversi dello stesso programma.
+
+
+\item Alcuni gruppi utilizzano un approccio del tipo: ``una certa azione viene eseguita/ripetuta finché non viene letta l'azione successiva''.
+In questo caso girare di spalle il portavoce in modo che non veda il robot durante la lettura delle azioni.
+
+	
+\end{compactitem}
+
+\\
+\hline
+
+Introduzione dei vincoli sull'uso dei post-it e dei superpoteri
+
+\medskip
+\textbf{NB: questa fase e la precedente possono essere riunificate per ridurre i tempi.}
+
+\medskip
+\emph{
+[Appendere il cartellone con la descrizione dei ``superpoteri''.]}
+&
+\begin{compactitem}
+\item \textbf{Se volete, potete usare questi superpoteri!}
+
+
+\item Presentazione delle strutture di controllo
+con la seguente sintassi:
+
+\begin{itemize}
+\item SE $\langle$condizione$\rangle$ ESEGUI $\langle$post-it$\rangle$
+\item RIPETI $\langle$n$\rangle$ VOLTE $\langle$post-it$\rangle$
+\item RIPETI FINO A QUANDO $\langle$condizione$\rangle$:  $\langle$post-it$\rangle$
+\end{itemize}
+
+NOTA: finch\'e-ripeti \`e un ciclo che testa la condizione all'inizio (quindi il corpo
+pu\`o essere eseguito 0 volte) e termina quando la condizione \`e VERA (stile until
+di Pascal).
+
+\item Mostrare come i post-it possono essere posizionati sul foglio all'interno delle strutture di controllo.
+
+\end{compactitem}
+
+&
+\begin{compactitem}
+\item Assicurarsi che tutti i gruppi scrivano i loro programmi e provino a testarli. 
+Quando la maggior parte delle coppie ha testato il proprio programma almeno una volta e verificato che più o meno funziona, si può passare alla fase di discussione.
+
+\item Se un gruppo ha già definito una soluzione che ``funziona'' ma altri gruppi stanno ancora lavorando, si può cercare di stimolare il gruppo ad analizzare/migliorare il loro programma (es: far fare il robot a un altro componente del gruppo, far girare il portavoce di schiena, spostare l'oggetto da raccogliere, ecc).
+
+\item Durante l'attività, identificare alcuni elementi utili da usare nella fase di discussione successiva.
+	
+\end{compactitem}
+
+\\
+\hline
+
+Esecuzione dei programmi e considerazioni conclusive sull'attività
+
+\medskip
+\emph{[A classe intera. Si fa eseguire il programma a ciascun gruppo, gli altri gruppi osservano.]}
+& 
+Alla fine di ciascuna esecuzione, si chiede agli altri se hanno osservazioni da fare. Se c'è tempo si possono fare altre ripetizioni scambiando robot e/o portavoce (scegliere le combinazioni che mettono in evidenza le eventuali ambiguità o fragilità dei programmi). Alla fine 
+si riassumono e mettono in evidenza le caratteristiche delle varie soluzioni:
+
+\begin{compactitem}
+	\item contare i passi oppure uso del bordo del tavolo con ``ripeti fino a quando''
+	\item soluzioni più o meno generali/dipendenti dal robot
+	\item scelta delle primitive e loro combinazione (es: ruota a dx di 90 gradi ripetuto 3 volte per girare anche a sinistra).
+\end{compactitem}
+
+
+& 
+
+L'obiettivo di questa fase è far ragionare la classe sugli approcci proposti, partendo da un confronto tra le soluzioni proposte. \textbf{\`E un passaggio delicato, cui dedicare un po' di tempo, perché consente ai ragazzi di riflettere su quanto hanno fatto fino adesso.} 
+
+  \begin{compactitem}
+  	\item Cercare di fare riferimento il più possibile a esempi concreti che si riscontrano nelle proposte dei vari gruppi; incentivare le osservazioni da parte dei componenti degli altri gruppi 
+	\item \`E probabile che in alcuni casi gli studenti contestino la correttezza delle soluzioni degli altri gruppi (il robot imbroglia, il portavoce modifica la lettura in base a quello che succede al robot, ecc)
+	questa è una buona occasione per sottolineare il fatto che è necessario definire delle istruzioni precise e non ambigue. Attenzione però a che l'aspetto competitivo non prevalga sul concetto che si vuole far emergere!
+%	\item Ascoltare le soluzioni dei compagni mette la propria sotto una prospettiva diversa. Questo tipo di confronto aiuta gli studenti ad ampliare i propri orizzonti cognitivi.
+  \end{compactitem} 
+\\
+\hline
+
+\end{longtable}
+
+
+\newpage
+\subsection{Attività al computer}
+
+\begin{longtable}{|p{5cm}|p{13cm}|p{7cm}|}
+	\hline
+	\textbf{Descrizione dell'attività} 
+	& \textbf{Cosa dire} 
+	& \textbf{A cosa prestare attenzione} 
+	\\
+	\hline
+
+
+Collegamento con la fase conclusiva del laboratorio
+\medskip
+
+&
+Alla fine della discussione, per introdurre la fase successiva al computer, spiegare che il computer funziona proprio attraverso dei programmi formati da istruzioni. In particolare ora si userà un ambiente di programmazione che consente di dare istruzioni ad un ``robot'' che gli consentano di uscire da un labirinto.
+
+&
+\\
+\hline
+
+
+Programmazione con Scratch
+\medskip
+
+\emph{[L'attività si svolge a coppie, al computer.]}
+&
+Quando le coppie si sono posizionate, introdurre a grandi linee l'ambiente di programmazione, usando il labirinto 0, senza suggerire possibili soluzioni:
+\begin{compactitem}
+	\item Introdurre l'istruzione ``fai n passi'' (mostrando come cambiare il
+	numero di passi) e un'istruzione di rotazione, facendo vedere come eseguirle in
+	sequenza per muovere la lampada in un percorso che non abbia particolare senso per il labirinto.
+	\item Introdurre il costrutto ``se - allora'' spostando manualmente la lampada
+	vicino all'uscita e facendo vedere come si verifica se il naso \`e su un colore
+	piuttosto che no. Usare il fumetto come istruzione da eseguire in modo
+	condizionale. Gli altri due costrutti ("ripeti n volte" e "ripeti fino a
+	quando") si menzionano solo per distinguerli dagli altri.
+	\item Indicare dove si trovano in generale i blocchi corrispondenti alle azioni, ai superpoteri e ai sensori.
+	\item Spiegare come caricare i file con i vari labirinti 
+\end{compactitem}
+
+
+
+Quando tutti i gruppi hanno capito come lavorare, lanciare la gara: per contare la lunghezza di un programma valgono
+solo i mattoncini blu (non le strutture di controllo).
+
+
+
+
+&
+
+\begin{compactitem}
+\item A volte i ragazzi cercano di attraversare il percorso a pezzi (dispongono dei blocchi e li eseguono, poi li modificano e li eseguono, e così via fino all'uscita). In questo caso bisogna chiarire ai ragazzi che l'obiettivo invece è scrivere un programma intero che, una volta avviato, porti la lampada dalla partenza all'uscita.
+
+\item Se è il caso (ad esempio quando si vedono programmi molto lunghi), fare osservare la struttura ripetitiva dei labirinti e proporre di sfruttarla per ridurre il numero delle istruzioni attraverso l'uso dei costrutti di controllo se/ripeti.
+
+\item Evitare che i ragazzi perdano tempo modificando gli {\it sprite} o usando altre funzionalità di scratch non pertinenti con gli obiettivi del laboratorio.
+
+\end{compactitem}
+
+\\
+\hline
+\end{longtable}
+
+\newpage
+\subsection{Conclusione del laboratorio}
+
+
+
+\begin{longtable}{|p{5cm}|p{12cm}|p{8cm}|}
+	\hline
+	\textbf{Descrizione dell'attività} 
+	& \textbf{Cosa dire} 
+	& \textbf{A cosa prestare attenzione} 
+	\\
+	\hline
+	
+Riepilogo
+
+\medskip
+\emph{[a classe intera]}
+&
+In questa fase si ricapitola quanto si è fatto durante le varie attività per dare la possibilità alla classe di riflettere sul senso complessivo del laboratorio: ragionare sul concetto di informazione nel contesto dell'informatica come scienza che si occupa dell'elaborazione automatica dell'informazione, e in particolare ragionare su come si possa rappresentare l'informazione relativa alla formattazione dei testi in maniera tale da rendere automatica la loro elaborazione (nelle pagine web, tramite un programma di videoscrittura, ecc).
+
+Anche questa fase può essere condotta o in modo interlocutorio, o in maniera frontale. Nel primo caso le domande possono essere del tipo
+\begin{compactitem}
+	\item siamo partiti parlando della parola ``automatico'': che cosa c'\`e di automatico in quello che abbiamo fatto?
+	\item si può dire che abbiamo fatto ``informatica'' oggi? quando? anche nella attività con i robot umani? 
+\end{compactitem}
+
+Ecco gli elementi che il conduttore deve cercare di fare mergere oppure
+  proporre nel suo riassunto:
+
+
+\emph{Automatica:} 
+  il robot (anche se umano!) doveva eseguire le istruzioni senza
+  ``metterci del suo'', addirittura senza percepire elementi
+  dell'ambiente che non fossero stati esplicitamente menzionati dai
+  ``programmatori'', cio\`e i progettisti delle attivit\`a del robot. Invece non c'è niente di automatico nel progettare e scrivere un programma che eseguito da ``esecutori automatici'' consenta di ottenere l'obiettivo desiderato (c'è bisogno infatti di logica, inventiva, creatività).
+
+
+\emph{Informazione:} Sono in gioco almeno due tipi molto diversi di
+  informazioni: da un lato c'\`e il programma, che deve essere
+  descritto in termini ``formali'' (cio\`e rispettando regole di
+  forma, come l'uso dei post-it) con l'obiettivo di eliminare le
+  ambiguit\`a; dall'altro ci sono i dati sull'ambiente in cui si trova
+  il robot che vengono rappresentati (e tipicamente
+  semplificati/stilizzati) nel programma: per esempio, il fatto che
+  nella stanza ci potesse essere un profumo, non entrava a far parte
+  delle cose percepite dal robot (anche se la persona robot, lo
+  avrebbe certamente percepito).
+
+\emph{Elaborazione} L'informazione rappresentata viene
+  manipolata, elaborata e trasformata in movimenti del robot.
+
+
+
+
+&
+Se si riesce, anche in questa fase è utile cercare di valorizzare quanto emerge dalla classe. Ad esempio, se qualcuno si dichiara poco convinto di aver fatto informatica, cogliete l'occasione per cercare di spiegare meglio in che senso invece stabilire che istruzioni dare a un robot umano è informatica (analizzare problemi e studiare soluzioni che consentono poi una elaborazione automatica dell'informazione: sfruttare il bordo del tavolo per decidere quando girare è una buona idea ``informatica'', istruzioni che dipendono fortemente dalla lunghezza del piede del robot umano invece non lo sono dato che forniscono la soluzione solo in alcuni casi particolari). 
+\\
+\hline
+
+
+
+\end{longtable}
+
+\end{landscape}
+
+
+\end{document}
+
+%%% Local Variables:
+%%% mode: latex
+%%% TeX-master: t
+%%% End:
